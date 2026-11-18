@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palmera Bay — A Sunset City Story</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>🌇</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="game"></div>
+
+<!-- ============ HUD ============ -->
+<div id="hud" class="hidden">
+  <div id="hud-top-left">
+    <div id="cash">$<span id="cash-value">0</span></div>
+    <div id="health-wrap"><div id="health-bar"></div><span id="health-text">100</span></div>
+    <div id="ammo-wrap">🔫 <span id="ammo-value">12 / ∞</span></div>
+  </div>
+  <div id="hud-top-right">
+    <div id="wanted-stars"></div>
+    <div id="clock">☀ <span id="clock-value">10:24</span></div>
+  </div>
+  <div id="objective-wrap">
+    <div id="objective-title">FREE ROAM</div>
+    <div id="objective-text">Explore Palmera Bay. Press N to start the next mission.</div>
+  </div>
+  <canvas id="minimap" width="200" height="200"></canvas>
+  <div id="speed-wrap" class="hidden"><span id="speed-value">0</span><span id="speed-unit"> mph</span></div>
+  <div id="interact-prompt" class="hidden">Press <b>E</b> <span id="interact-text"></span></div>
+  <div id="crosshair" class="hidden">+</div>
+  <div id="banner" class="hidden"></div>
+  <div id="toast"></div>
+</div>
+<div id="vignette"></div>
+<div id="fader"></div>
+
+<!-- ============ START MENU ============ -->
+<div id="menu">
+  <div id="menu-inner">
+    <div id="menu-kicker">A SUNSET CITY STORY</div>
+    <h1 id="menu-title">PALMERA<br>BAY</h1>
+    <p id="menu-story">Mara Voss came back to Palmera Bay to drive and disappear.
+    The city had other plans. One last crew. Five jobs. No way out but through.</p>
+    <div id="menu-buttons">
+      <button id="btn-start" class="menu-btn primary">▶ START GAME</button>
+      <button id="btn-continue" class="menu-btn hidden">↻ CONTINUE — <span id="continue-label"></span></button>
+      <button id="btn-howto" class="menu-btn">HOW TO PLAY</button>
+    </div>
+    <div id="menu-missions">
+      <div class="menu-missions-title">THE CREW'S JOBS</div>
+      <ol id="mission-list"></ol>
+    </div>
+    <div id="howto" class="hidden">
+      <b>WASD</b> move / drive &nbsp;·&nbsp; <b>Mouse drag</b> look &nbsp;·&nbsp; <b>Click</b> shoot &nbsp;·&nbsp; <b>E</b> enter / steal car, interact &nbsp;·&nbsp; <b>Shift</b> sprint &nbsp;·&nbsp; <b>Space</b> jump / handbrake &nbsp;·&nbsp; <b>R</b> reload &nbsp;·&nbsp; <b>N</b> start next mission &nbsp;·&nbsp; <b>Esc</b> pause
+    </div>
+    <div id="menu-foot">Palmera Bay is an original game. Its city, characters, vehicles, names, story, art, sound and music were made for this game. No network needed — it plays offline.</div>
+  </div>
+</div>
+
+<!-- ============ PAUSE ============ -->
+<div id="pause" class="hidden">
+  <div id="pause-inner">
+    <h2>PAUSED</h2>
+    <button id="btn-resume" class="menu-btn primary">RESUME</button>
+    <button id="btn-save" class="menu-btn">SAVE GAME</button>
+    <button id="btn-quit" class="menu-btn">QUIT TO MENU</button>
+    <div id="pause-save-note"></div>
+  </div>
+</div>
+
+<script src="vendor/three.min.js"></script>
+<script src="js/core.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/city.js"></script>
+<script src="js/vehicles.js"></script>
+<script src="js/pedestrians.js"></script>
+<script src="js/police.js"></script>
+<script src="js/combat.js"></script>
+<script src="js/missions.js"></script>
+<script src="js/hud.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
